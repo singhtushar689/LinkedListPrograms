@@ -29,7 +29,14 @@ namespace LinkedLists
                 Console.WriteLine("{0} Inserted in linked list ", node);
 
             }
-            public void Display()
+        public void AddFirst(int data) 
+        {
+            Node newNode = new Node(data);
+            newNode.next = head;
+            head = newNode;
+            Console.WriteLine($"{newNode.data} is added into the list.");
+        }
+        public void Display()
             {
                 Node temp = this.head;
                 if (temp == null)
