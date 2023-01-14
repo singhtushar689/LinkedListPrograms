@@ -36,8 +36,13 @@ namespace LinkedLists
             head = newNode;
             Console.WriteLine($"{newNode.data} is added into the list.");
         }
+        public void Append(int data)
+        {
+            AddLast(data);
+        }
+
         public void Display()
-            {
+        {
                 Node temp = this.head;
                 if (temp == null)
                 {
@@ -46,12 +51,12 @@ namespace LinkedLists
                 }
                 else
                 {
-                    while (temp != null)
+                    while (temp != null) 
                     {
                         Console.WriteLine(temp.data + " ");
                         temp = temp.next;
                     }
                 }
-            }
+        }
     }
 }
