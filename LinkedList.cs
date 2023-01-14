@@ -142,6 +142,33 @@ namespace LinkedLists
             if (!isFound)
                 Console.WriteLine($"{data} node is not present.");
         }
+        public void DeleteFromMiddle(int data)
+        {
+            Node temp = head;
+            if (temp == null)
+            {
+                Console.WriteLine("List is empty, deletion cant be done.");
+            }
+            else if (temp.next == null)
+            {
+                Console.WriteLine($"{temp.data} has been deleted");
+                head = null;
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    if (temp.next.data == data)
+                    {
+                        Console.WriteLine($"{temp.next.data} has been deleted.");
+                        temp.next = temp.next.next;
+                        //temp.next.next = null;
+                    }
+                    temp = temp.next;
+                }
+
+            }
+        }
         public void Display()
         {
                 Node temp = this.head;
