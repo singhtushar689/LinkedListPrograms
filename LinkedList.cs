@@ -72,6 +72,28 @@ namespace LinkedLists
             head = head.next;
             Console.WriteLine($"First node {deletedNode} has been removed.");
         }
+        public void RemoveLast()        //RemoveLast UC6
+        {
+            Node temp = head;
+            if (head == null)
+                Console.WriteLine("LinkedList is emty");
+            else if (temp.next == null)
+            {
+                int data = temp.data;
+                head = null;
+                Console.WriteLine($"{data} is deleted");
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+                int lastDeletedNode = temp.next.data;
+                temp.next = null;
+                Console.WriteLine($"{lastDeletedNode} node is deleted");
+            }
+        }
         public void Display()
         {
                 Node temp = this.head;
