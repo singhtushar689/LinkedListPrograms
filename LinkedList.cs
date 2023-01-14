@@ -38,9 +38,40 @@ namespace LinkedLists
         }
         public void Append(int data)
         {
-            AddLast(data);
+            Add(data);
         }
-
+        public void InsertBetweenNodes(int insertAfter, int data, int insertBefore)       //InsertBetweenNodes() UC4.
+        {
+            Node newNode = new Node(data);
+            bool isFound = false;
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("Linked List is empty");
+            else
+            {
+                while (temp != null)
+                {
+                    if (temp.data == insertAfter && temp.next.data == insertBefore)
+                    {
+                        //Console.WriteLine($"{temp.data} node is present");
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        Console.WriteLine($"{newNode.data} insertion done between {temp.data} and {newNode.next.data}.");
+                        isFound = true;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            if (!isFound)
+                Console.WriteLine($"{data} node is not present.");
+        }
+        public void RemoveFirst()      //AddFirst UC5 
+        {
+            int deletedNode = head.data;
+            head = head.next;
+            Console.WriteLine($"First node {deletedNode} has been removed.");
+        }
         public void Display()
         {
                 Node temp = this.head;
@@ -60,3 +91,4 @@ namespace LinkedLists
         }
     }
 }
+

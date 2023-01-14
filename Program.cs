@@ -7,7 +7,8 @@ namespace LinkedLists
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Linkedlist Program");
-            Console.WriteLine("Enter the Options given below \n 1.Create a LinkedList \n 2.Adding Elements \n 3. Append Elements \n 4 Inserting Elements \n 5.Exit");
+            Console.WriteLine("Enter the Options given below \n 1.Create a LinkedList \n 2.Adding Elements \n 3. Append Elements " +
+                "\n 4 Inserting Elements \n 5.Delete Element \n 6.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -40,6 +41,16 @@ namespace LinkedLists
                     customLinkedList2.Append(70);
                     customLinkedList2.Display();
                     break;
+                case 5:
+                    LinkedList customLinkedList4 = new LinkedList();
+                    customLinkedList4.AddFirst(56);
+                    customLinkedList4.Add(30);
+                    customLinkedList4.Add(70);
+                    customLinkedList4.Display();
+                    customLinkedList4.RemoveFirst();            //Deleting First Node UC5.
+                    customLinkedList4.Display();
+                    break;
+
                 default:
                     Console.WriteLine("Enter the valid option");
                     break;
