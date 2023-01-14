@@ -8,7 +8,7 @@ namespace LinkedLists
         {
             Console.WriteLine("Welcome to the Linkedlist Program");
             Console.WriteLine("Enter the Options given below \n 1.Create a LinkedList \n 2.Adding Elements \n 3. Append Elements " +
-                "\n 4 Inserting Elements \n 5.Delete Element \n 6.Delete LastElement \n 7.Exit");
+                "\n 4 Inserting Elements \n 5.Delete Element \n 6.Delete LastElement \n 7.Searching Node \n 8.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -58,6 +58,13 @@ namespace LinkedLists
                     customLinkedList5.Display();
                     customLinkedList5.RemoveLast();             //Deleteing Last Node UC6.
                     customLinkedList5.Display();
+                    break;
+                 case 7:
+                    LinkedList customLinkedList6 = new LinkedList();
+                    customLinkedList6.AddFirst(56);
+                    customLinkedList6.Add(30);
+                    customLinkedList6.Add(70);
+                    customLinkedList6.SearchNode(30);       //Searching any given Node .UC7.
                     break;
 
                 default:
